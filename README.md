@@ -25,10 +25,22 @@ Clone repo
 git clone https://github.com/leonard-henriquez/simple-job-queue
 ```
 
+Make sure you have [Docker Compose](https://docs.docker.com/compose/) installed on your computer
+
 ## :rocket: Usage
+
+Start the job queue system (RabbitMQ) with:
 
 ```sh
 docker-compose up
+```
+
+Then [open the web UI](http://localhost:5555/) (Flower) to monitor the system
+
+Finally add new jobs to the queue:
+
+```sh
+python launch_tasks.py
 ```
 
 ## :hammer_and_wrench: Support
