@@ -40,6 +40,10 @@ Then [open the web UI](http://localhost:5555/) (Flower) to monitor the system
 Finally add new jobs to the queue:
 
 ```sh
+# First tell indicate where is the broker
+export CELERY_BROKER_URL=amqp://admin:mypass@127.0.0.1:5672
+export CELERY_RESULT_BACKEND=amqp://admin:mypass@127.0.0.1:5672
+# Then launch tasks
 python launch_tasks.py
 ```
 

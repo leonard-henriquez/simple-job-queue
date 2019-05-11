@@ -1,11 +1,12 @@
 from celery import Celery
-from .settings import BROKER_URL
+from .settings import CELERY_BROKER_URL, CELERY_RESULT_BACKEND
 
-print('URL of broker: ', BROKER_URL)
+print('URL of broker: ', CELERY_BROKER_URL)
+print('URL of backend: ', CELERY_RESULT_BACKEND)
 app = Celery(
   'worker',
-  broker=BROKER_URL,
-  backend='amqp://',
+  broker=CELERY_BROKER_URL,
+  backend=CELERY_RESULT_BACKEND,
   include=['app.tasks']
 )
 

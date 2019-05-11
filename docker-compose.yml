@@ -21,6 +21,7 @@ services:
       - rabbit
     environment:
       - CELERY_BROKER_URL=amqp://${RABBITMQ_USER}:${RABBITMQ_PASS}@rabbit:${RABBITMQ_PORT}
+      - CELERY_RESULT_BACKEND=amqp://${RABBITMQ_USER}:${RABBITMQ_PASS}@rabbit:${RABBITMQ_PORT}
   monitor:
     hostname: monitor
     image: mher/flower:latest
@@ -30,3 +31,4 @@ services:
       - "${FLOWER_PORT}:5555"
     environment:
       - CELERY_BROKER_URL=amqp://${RABBITMQ_USER}:${RABBITMQ_PASS}@rabbit:${RABBITMQ_PORT}
+      - CELERY_RESULT_BACKEND=amqp://${RABBITMQ_USER}:${RABBITMQ_PASS}@rabbit:${RABBITMQ_PORT}
