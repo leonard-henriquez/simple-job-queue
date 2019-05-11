@@ -3,7 +3,7 @@ services:
   rabbit:
     hostname: rabbit
     restart: always
-    image: rabbitmq
+    image: rabbitmq:management-alpine
     environment:
       - RABBITMQ_DEFAULT_USER=${RABBITMQ_USER}
       - RABBITMQ_DEFAULT_PASS=${RABBITMQ_PASS}
