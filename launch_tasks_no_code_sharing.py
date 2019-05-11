@@ -15,6 +15,7 @@ app = Celery(
 print('Start!')
 for i in range(100):
   print('New task #', i)
-  result = app.send_task('task_wait_3s')
+  result = app.send_task('app.tasks.task_wait_3s')
+  print(result.get())
 
 exit()
