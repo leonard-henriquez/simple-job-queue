@@ -5,5 +5,5 @@ ADD requirements.txt .
 RUN pip install -r requirements.txt
 RUN rm requirements.txt
 
-ADD ./app /app
-CMD ["celery", "-A", "app.worker", "worker", "--loglevel=info"]
+ADD . /worker
+CMD ["celery", "-A", "worker.worker", "worker", "--loglevel=info"]

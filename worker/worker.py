@@ -7,7 +7,7 @@ app = Celery(
   'worker',
   broker=CELERY_BROKER_URL,
   backend=CELERY_RESULT_BACKEND,
-  include=['app.tasks']
+  include=['worker.tasks']
 )
 
 if __name__ == '__main__':

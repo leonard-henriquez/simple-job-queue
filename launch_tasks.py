@@ -1,5 +1,5 @@
 import time
-from app.tasks import task_wait_3s
+from worker.tasks import task_wait_3s
 
 print('Start!')
 for i in range(100):

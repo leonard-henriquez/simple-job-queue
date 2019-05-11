@@ -13,10 +13,10 @@ services:
     hostname: worker
     restart: always
     build:
-      context: .
+      context: ./worker
       dockerfile: Dockerfile
     volumes:
-      - ./app:/app
+      - ./worker:/worker
     depends_on:
       - rabbit
     environment:
