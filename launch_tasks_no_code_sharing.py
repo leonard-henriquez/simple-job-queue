@@ -8,10 +8,10 @@ CELERY_RESULT_BACKEND = environ["CELERY_RESULT_BACKEND"]
 print('URL of broker: ', CELERY_BROKER_URL)
 print('URL of backend: ', CELERY_RESULT_BACKEND)
 worker = Celery(
-    'worker',
-    broker=CELERY_BROKER_URL,
-    backend=CELERY_RESULT_BACKEND,
-    include=['worker.tasks']
+  'worker',
+  broker=CELERY_BROKER_URL,
+  backend=CELERY_RESULT_BACKEND,
+  include=['worker.tasks']
 )
 
 print('Start!')
