@@ -6,4 +6,4 @@ RUN pip install -r requirements.txt
 RUN rm requirements.txt
 
 ADD . /worker
-CMD ["celery", "-A", "worker.worker", "worker", "--queues=worker_queue", "--loglevel=info"]
+CMD ["celery", "worker", "-A", "worker.worker", "--queues=worker_queue", "-n worker@%h", "--loglevel=info"]

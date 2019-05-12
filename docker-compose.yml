@@ -21,7 +21,6 @@ services:
     ports:
       - "${REDIS_PORT}:6379"
   worker:
-    hostname: worker
     restart: always
     build:
       context: ./worker
